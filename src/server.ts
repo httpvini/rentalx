@@ -1,17 +1,11 @@
 import express from "express";
 
+import { categoriesRoutes } from "./routes/categories.routes";
+
 const app = express();
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send({ message: "abandon hope all ye who enter here" });
-});
-
-app.post("/courses", (req, res) => {
-  const { name } = req.body;
-
-  return res.json({ name });
-});
+app.use(categoriesRoutes);
 
 app.listen(5000, () => console.log("app is running"));
