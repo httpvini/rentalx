@@ -34,7 +34,6 @@ class SpecificationsRepository implements ISpecificationsRepository {
   }
 
   findByName(name: string): Specification {
-    console.log(this.specifications);
     const specification = this.specifications.find(
       (specification) => specification.name === name
     );
